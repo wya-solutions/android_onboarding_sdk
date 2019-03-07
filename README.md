@@ -75,12 +75,73 @@ public void onActivityResult(int requestCode, int resultCode, final Intent data)
         // Make sure the request was successful
         if (resultCode == RESULT_OK) {
             String result = data.getStringExtra("data");
-            Log.d("result", result);
+            TextView text= findViewById(R.id.textView);
+            try {
+                JSONObject obj = new JSONObject(result);
+                text.setText(obj.toString(5));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         } else {
-            String message = data.getStringExtra("message");
-            String code = data.getStringExtra("code");
-            Log.d("Error: ", code);
+            TextView text= findViewById(R.id.textView);
+            text.setText("Code: " + data.getStringExtra("code") + " - " + data.getStringExtra("message"));
         }
+    }
+}
+
+
+JSON object obtenido de 'data.getStringExtra("data")'
+{
+    "data": {
+        "validation": {
+            "dni": {
+                "success": true,
+                "message": "OK"
+            },
+            "faceRecognition": {
+                "success": true,
+                "distance": 0.45
+            }
+        },
+        "front": {
+            "nro": "10000100001",
+            "lastName": "DOE",
+            "names": "JOHN",
+            "sex": "M",
+            "dni": "12345678",
+            "copy": "C",
+            "dateOfBirth": "07/09/1989",
+            "dateOfIssue": "05/09/2017",
+            "valid": true,
+            "codeType": "pdf417"
+        },
+        "back": {
+            "lastName": "DOE",
+            "names": "JOHN",
+            "sex": "F",
+            "dni": "12345678",
+            "dateOfBirth": "07/09/1989",
+            "nationality": "ARG",
+            "expiry": "27/08/2032",
+            "valid": true,
+            "checkDigit": {
+                "documentNumber": {
+                    "value": "6",
+                    "valid": true
+                },
+                "dob": {
+                    "value": "9",
+                    "valid": true
+                },
+                "expiry": {
+                    "value": "6",
+                    "valid": true
+                },
+                "valid": true
+            },
+            "codeType": "mrz"
+        },
+        "jwt": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2YWxpZGF0aW9...."
     }
 }
 
