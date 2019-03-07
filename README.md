@@ -25,7 +25,7 @@ En el archivo build.gradle de la app, agregar la siguiente dependencia:
 ```
 dependencies {
     ...
-    implementation 'com.wya.identityValidator:sdk_android_id_onboarding:1.1'
+    implementation 'com.wya.identityValidator:sdk_android_id_onboarding:1.2'
     ...
 }
 ```
