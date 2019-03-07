@@ -25,16 +25,18 @@ En el archivo build.gradle de la app, agregar la siguiente dependencia:
 ```
 dependencies {
     ...
-    implementation 'com.wya.identityValidator:sdk_android_id_onboarding:1.0'
+    implementation 'com.wya.identityValidator:sdk_android_id_onboarding:1.1'
     ...
 }
 ```
 ### 2.3. Compatibilidad con java 8
 En el archivo build.gradle de la app, agregar lo siguiente:
 ```
-compileOptions {
+android {
+    compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 ```
 # 3. Licencia
@@ -54,6 +56,10 @@ Cargar la licencia en el archivo strings.xml de la carpeta de recursos (/res/val
 ### 4.1. Llamar al validador de identidad:
 
 ```
+import com.wya.identityValidator.StepperActivity;
+
+...
+
 Intent intent = new Intent(SignupActivity.this, StepperActivity.class);
 startActivityForResult(intent, 1);
 
@@ -85,6 +91,7 @@ En caso de error, se devolvera un codigo especifico en la variable 'resultCode' 
 ```
 
 resultCode: 0 - RESULT_CANCELED
+- code: 001 / message: Onboarding canceled
 
 resultCode: 1 - RESULT_NETWORK_ERROR   
 - code: 100 / message: Check internet connection
