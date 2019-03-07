@@ -1,6 +1,6 @@
 # 1. Quick Start
 Esta guía de inicio rápido le ayudará a ejecutar un proyecto de muestra implementando el SDK para validacion de identidad. 
-Para ejecutar el proyecto de ejemplo, necesitará Android Studio instalado.
+Para ejecutar el proyecto de ejemplo, necesitará Android Studio instalado. Para implementar el SDK en su proyecto, ir a la seccion 2 de este tutorial.
 
 ```
 1. Clonar projecto de github: 
