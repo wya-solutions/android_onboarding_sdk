@@ -3,8 +3,8 @@ Esta guía de inicio rápido le ayudará a ejecutar un proyecto de muestra imple
 Para ejecutar el proyecto de ejemplo, necesitará Android Studio instalado. Para implementar el SDK en su proyecto, ir a la seccion 2 de este tutorial.
 
 ```
-1. Clonar projecto de github: 
-2. Abrir el proyecto en Android Studio y cargar la licencia.
+1. Clonar projecto de github: git clone https://github.com/wya-solutions/android_onboarding_sdk.git
+2. Abrir el proyecto en Android Studio y cargar la licencia (ver punto 3).
 3. Ejecutar el proyecto.
 ```
 
